@@ -1,0 +1,90 @@
+name: Kanban Auto Move
+
+on:
+  issues:
+    types: [opened, labeled, unlabeled, closed, reopened]
+  pull_request:
+    types: [opened, reopened, ready_for_review, closed, converted_to_draft]
+
+permissions:
+  repository-projects: write
+  issues: read
+  pull-requests: read
+
+jobs:
+  move:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const boardName = "Delivery Board"; // must match your project name
+            const repo = context.repo;
+            // Find project
+            const { data: projects } = await github.request('GET /repos/{owner}/{repo}/projects', {
+              owner: repo.owner, repo: repo.repo, headers: { accept: 'application/vnd.github.inertia-preview+json' }
+            });
+            const project = projects.find(p => p.name === boardName);
+            if (!project) { core.info("Project not found; skip"); return; }
+
+            // Columns map
+            const { data: cols } = await github.request('GET /projects/{project_id}/columns', {
+              project_id: project.id, headers: { accept: 'application/vnd.github.inertia-preview+json' }
+            });
+            const colByName = Object.fromEntries(cols.map(c => [c.name, c.id]));
+
+            // Determine target + content type/id
+            let targetCol = null, contentType = null, contentId = null;
+            if (context.eventName === "issues") {
+              contentType = "Issue";
+              contentId = context.payload.issue.id;
+              const labels = (context.payload.issue.labels || []).map(l => l.name);
+              if (context.payload.action === "closed") targetCol = "Done";
+              else if (labels.includes("priority: high")) targetCol = "In Progress";
+              else if (labels.includes("triage")) targetCol = "Backlog";
+              else targetCol = "Backlog";
+            } else {
+              contentType = "PullRequest";
+              contentId = context.payload.pull_request.id;
+              if (context.payload.action === "closed") targetCol = "Done";
+              else if (context.payload.action === "ready_for_review") targetCol = "In Review";
+              else targetCol = "In Progress";
+            }
+
+            // Find existing cards with this item and move/create
+            for (const col of cols) {
+              const { data: cards } = await github.request('GET /projects/columns/{column_id}/cards', {
+                column_id: col.id, per_page: 100,
+                headers: { accept: 'application/vnd.github.inertia-preview+json' }
+              });
+              const card = cards.find(c => c.content_id === contentId);
+              if (card) {
+                if (col.name !== targetCol) {
+                  await github.request('POST /projects/columns/cards/{card_id}/moves', {
+                    card_id: card.id, position: "top", column_id: colByName[targetCol],
+                    headers: { accept: 'application/vnd.github.inertia-preview+json' }
+                  });
+                }
+                return;
+              }
+            }
+            // No card yet → create in target column
+            await github.request('POST /projects/columns/{column_id}/cards', {
+              column_id: colByName[targetCol],
+              content_id: contentId,
+              content_type: contentType,
+              headers: { accept: 'application/vnd.github.inertia-preview+json' }
+            });
+Behavior:
+
+New issues → Backlog
+
+PRs opened → In Progress, PRs “Ready for review” → In Review
+
+Closed issues/PRs → Done
+
+Label priority: high → In Progress
+
+Label triage → Backlog
+
+(You can tweak the rules right in the script.)
