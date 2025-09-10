@@ -12,5 +12,6 @@
 - [ ] Tests added/updated (if applicable)
 - [ ] Docs updated (README/CHANGELOG)
 - [ ] CI passes
+- [ ] I applied at least one label (e.g., `bug`, `enhancement`, `documentation`, `priority: high`)
 
 <!-- Link issues like: Closes #123 -->
