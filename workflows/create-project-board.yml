@@ -1,0 +1,57 @@
+name: Create Kanban Project Board
+
+on:
+  workflow_dispatch:
+    inputs:
+      project_name:
+        description: "Project board name"
+        default: "Delivery Board"
+        required: true
+
+permissions:
+  repository-projects: write
+  contents: read
+
+jobs:
+  create:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create project (classic) if missing
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const name = core.getInput('project_name');
+            const repo = context.repo;
+            // List existing projects
+            const { data: projects } = await github.request('GET /repos/{owner}/{repo}/projects', {
+              owner: repo.owner, repo: repo.repo, headers: { accept: 'application/vnd.github.inertia-preview+json' }
+            });
+            let project = projects.find(p => p.name === name);
+            if (!project) {
+              const { data } = await github.request('POST /repos/{owner}/{repo}/projects', {
+                owner: repo.owner, repo: repo.repo, name,
+                body: 'Backlog → In Progress → In Review → Next Release → Done',
+                headers: { accept: 'application/vnd.github.inertia-preview+json' }
+              });
+              project = data;
+              core.info(`Created project: ${project.html_url}`);
+            } else {
+              core.info(`Project already exists: ${project.html_url}`);
+            }
+
+            // Ensure columns
+            const want = ["Backlog", "In Progress", "In Review", "Next Release", "Done"];
+            const { data: cols } = await github.request('GET /projects/{project_id}/columns', {
+              project_id: project.id, headers: { accept: 'application/vnd.github.inertia-preview+json' }
+            });
+            const have = new Map(cols.map(c => [c.name, c]));
+            for (const col of want) {
+              if (!have.has(col)) {
+                await github.request('POST /projects/{project_id}/columns', {
+                  project_id: project.id, name: col,
+                  headers: { accept: 'application/vnd.github.inertia-preview+json' }
+                });
+                core.info(`Added column: ${col}`);
+              }
+            }
+            core.setOutput('url', project.html_url);
