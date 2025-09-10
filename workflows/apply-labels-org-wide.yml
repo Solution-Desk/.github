@@ -1,0 +1,59 @@
+name: Apply standard labels (org wide)
+
+on:
+  workflow_dispatch:
+    inputs:
+      repos:
+        description: "Comma-separated list (owner/repo) or 'auto' to use default set"
+        required: false
+        default: "auto"
+
+permissions:
+  contents: read
+
+jobs:
+  fanout:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Decide repo list
+        id: pick
+        run: |
+          if [ "${{ github.event.inputs.repos }}" = "auto" ]; then
+            # TODO: edit this list as you move projects into the org
+            echo 'list=["Solution-Desk/.github","Solution-Desk/organiser-pro","Solution-Desk/auto-hired","Solution-Desk/review-ready"]' >> $GITHUB_OUTPUT
+          else
+            # turn "a/b,c/d" into a JSON array
+            list=$(python - <<'PY'
+from json import dumps
+import os
+s = os.environ["REPOS"]
+print("[" + ",".join([f'"{x.strip()}"' for x in s.split(",") if x.strip()]) + "]")
+PY
+)
+            echo "list=$list" >> $GITHUB_OUTPUT
+          fi
+        env:
+          REPOS: ${{ github.event.inputs.repos }}
+
+      - name: Run label sync for each repo
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.ORG_ADMIN_TOKEN }}
+          script: |
+            const repos = JSON.parse("${{ steps.pick.outputs.list }}");
+            const fs = require('fs');
+            const yaml = require('js-yaml');
+            const { execSync } = require('child_process');
+            const config = yaml.load(fs.readFileSync('labels.yml', 'utf8'));
+
+            // Install labeler cli
+            execSync('npm i -g github-label-sync', { stdio: 'inherit' });
+
+            for (const repo of repos) {
+              console.log(`\n➡️  Syncing labels for ${repo}`);
+              // Write a temp json (the cli supports json)
+              fs.writeFileSync('labels.tmp.json', JSON.stringify(config));
+              execSync(`github-label-sync --access-token ${{ secrets.ORG_ADMIN_TOKEN }} --labels labels.tmp.json ${repo} --allow-added-labels --prune`, { stdio: 'inherit' });
+            }
