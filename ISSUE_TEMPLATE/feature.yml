@@ -1,0 +1,23 @@
+name: "Feature request"
+description: "Propose a new feature or enhancement."
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / Opportunity
+      description: What are you trying to solve? Who benefits?
+    validations: { required: true }
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the change, user story, or API.
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context / mockups
