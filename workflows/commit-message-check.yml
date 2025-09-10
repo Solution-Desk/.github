@@ -1,0 +1,26 @@
+name: Conventional Commits
+
+on:
+  pull_request:
+    types: [opened, synchronize, edited, reopened]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify commit messages follow Conventional Commits
+        uses: webiny/action-conventional-commits@v1.3.0
+        with:
+          # Allowed types; edit as needed
+          types: |
+            feat
+            fix
+            chore
+            docs
+            refactor
+            perf
+            test
+            build
+            ci
+          # Optional: allow "revert: ..."
+          allowRevert: true
