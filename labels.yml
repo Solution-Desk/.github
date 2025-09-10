@@ -1,0 +1,70 @@
+# Standard labels for Solution-Desk
+- name: bug
+  color: d73a4a
+  description: Something isn't working
+- name: enhancement
+  color: a2eeef
+  description: New feature or request
+- name: documentation
+  color: 0075ca
+  description: Improvements or additions to documentation
+- name: chore
+  color: cccccc
+  description: Maintenance, tooling, or non-user-facing change
+- name: refactor
+  color: fbca04
+  description: Code change that neither fixes a bug nor adds a feature
+- name: performance
+  color: 1d76db
+  description: Performance improvements
+- name: test
+  color: beffa8
+  description: Adding or updating tests
+- name: design/ux
+  color: 5319e7
+  description: UI/UX or design work
+- name: accessibility
+  color: 0e8a16
+  description: A11y improvements / fixes
+- name: security
+  color: ee0701
+  description: Security-related issue
+- name: dependencies
+  color: 0366d6
+  description: Bump or manage dependencies
+- name: question
+  color: d876e3
+  description: Further information is requested
+- name: help wanted
+  color: 008672
+  description: Extra attention is needed
+- name: good first issue
+  color: 7057ff
+  description: Good for newcomers
+- name: triage
+  color: e4e669
+  description: Needs review and categorization
+- name: backlog
+  color: bfdadc
+  description: Accepted, not scheduled yet
+- name: priority: high
+  color: b60205
+  description: Urgent / must do
+- name: priority: medium
+  color: fbca04
+  description: Should do soon
+- name: priority: low
+  color: 0e8a16
+  description: Nice to have
+- name: blocked
+  color: 000000
+  description: Cannot proceed until dependency is resolved
+- name: duplicate
+  color: cfd3d7
+  description: This issue or pull request already exists
+- name: wontfix
+  color: ffffff
+  description: This will not be worked on
+- name: invalid
+  color: e4e669
+  description: Not actionable as reported
