@@ -8,7 +8,7 @@ Reduce wasted time. Eliminate friction. Scale what works.
 ![Solution-Desk Banner](./banner.png) <!-- Add your banner image here -->
 
 [Website](https://thesolutiondesk.ca) • [Sponsor](https://github.com/sponsors/Solution-Desk) • contact@thesolutiondesk.ca  
-
+<iframe src="https://github.com/sponsors/Solution-Desk/button" title="Sponsor Solution-Desk" height="32" width="114" style="border: 0; border-radius: 6px;"></iframe>
 </div>
 
 ---
