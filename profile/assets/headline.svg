@@ -1,0 +1,25 @@
+<!-- The Solution Desk — Headline (self-hosted, no external services) -->
+<svg width="1200" height="120" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Automation-first platform for real people and small teams">
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff579e"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <style>
+      .h1 { font: 800 34px/1.3 Inter, "Segoe UI", Roboto, Arial, sans-serif; fill: #eaf2f7; }
+      .h2 { font: 600 22px/1.4 Inter, "Segoe UI", Roboto, Arial, sans-serif; fill: #cfe3ef; }
+    </style>
+  </defs>
+
+  <!-- subtle divider top & bottom -->
+  <rect x="0" y="6"   width="1200" height="2" rx="1" fill="url(#grad)" opacity="0.35"/>
+  <rect x="0" y="112" width="1200" height="3" rx="1.5" fill="url(#grad)"/>
+
+  <!-- text, centered -->
+  <g text-anchor="middle" transform="translate(600, 54)">
+    <text class="h1">Automation-first platform for real people and small teams</text>
+  </g>
+  <g text-anchor="middle" transform="translate(600, 92)">
+    <text class="h2">Tame chaos. Scale what works.</text>
+  </g>
+</svg>
