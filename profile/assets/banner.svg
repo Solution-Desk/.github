@@ -1,0 +1,68 @@
+<!-- The Solution Desk — Org Banner (2560×423) -->
+<!-- Uses your org logo from .github/profile/assets/logo.svg -->
+<!-- If your logo lives elsewhere, change the href below to the correct raw URL. -->
+<svg width="2560" height="423" viewBox="0 0 2560 423" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Solution Desk — Automation-first platform for real people and small teams">
+  <defs>
+    <!-- Brand gradient -->
+    <linearGradient id="tsdGradient" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff579e"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+
+    <!-- Subtle grid pattern -->
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+    </pattern>
+
+    <!-- Soft glow for headline -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Mono + system font stack -->
+    <style>
+      .title { font: 800 64px/1.2 Inter, "Segoe UI", Roboto, Arial, sans-serif; fill: #eaf2f7; }
+      .tag   { font: 500 28px/1.4 Inter, "Segoe UI", Roboto, Arial, sans-serif; fill: #cfe3ef; }
+      .pill  { font: 600 20px Inter, "Segoe UI", Roboto, Arial, sans-serif; fill: #0b0f14; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="2560" height="423" fill="#0b0f14"/>
+  <rect width="2560" height="423" fill="url(#grid)"/>
+
+  <!-- Accent bars -->
+  <rect x="0" y="24"  width="2560" height="3" rx="1.5" fill="url(#tsdGradient)" opacity="0.35"/>
+  <rect x="0" y="396" width="2560" height="4" rx="2"   fill="url(#tsdGradient)"/>
+
+  <!-- Left: Logo (from your org repo) -->
+  <image
+    href="https://raw.githubusercontent.com/Solution-Desk/.github/main/profile/assets/logo.svg"
+    x="120" y="86" width="200" height="200"
+    preserveAspectRatio="xMidYMid meet" />
+
+  <!-- Headline + Subheader -->
+  <g transform="translate(360, 160)" filter="url(#glow)">
+    <text class="title">The Solution Desk</text>
+  </g>
+  <g transform="translate(360, 220)">
+    <text class="tag">Automation-first platform for real people and small teams</text>
+  </g>
+
+  <!-- Brand pills -->
+  <g transform="translate(360, 270)">
+    <!-- pill bg -->
+    <rect x="0"   y="-26" rx="16" width="210" height="40" fill="url(#tsdGradient)"/>
+    <rect x="228" y="-26" rx="16" width="260" height="40" fill="url(#tsdGradient)" opacity="0.85"/>
+    <rect x="508" y="-26" rx="16" width="260" height="40" fill="url(#tsdGradient)" opacity="0.7"/>
+
+    <!-- pill text -->
+    <text class="pill" x="18"  y="2">⚡ Automation-first</text>
+    <text class="pill" x="246" y="2">🚀 Reduce wasted time</text>
+    <text class="pill" x="526" y="2">📈 Scale what works</text>
+  </g>
+</svg>
