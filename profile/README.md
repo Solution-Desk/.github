@@ -40,6 +40,8 @@ TaxMate simplifies how Canadians calculate, plan, and optimize their taxes — o
 
 TaxSmart embodies The Solution Desk philosophy: fix the process, and the results fix themselves.
 
+https://github.com/Solution-Desk/tax-smart-canadian-calculator.git
+
 ---
 
 ## Works in Progress
