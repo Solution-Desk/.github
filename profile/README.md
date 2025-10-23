@@ -70,7 +70,6 @@ If something here sparks an idea, reach out. Collaboration is always open-minded
 ## Contact
 
 - **Website:** [thesolutiondesk.ca](https://thesolutiondesk.ca)  
-- **GitHub:** [Solution-Desk](https://github.com/Solution-Desk)  
 - **Email:** [info@thesolutiondesk.ca](mailto:info@thesolutiondesk.ca)
 
 ---
