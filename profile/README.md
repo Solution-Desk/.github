@@ -1,91 +1,79 @@
-<div align="center">
-
-<img src="https://raw.githubusercontent.com/Solution-Desk/.github/main/profile/assets/banner.svg" alt="The Solution Desk Banner" width="100%" />
-<img src="https://github.com/Solution-Desk.png?size=280" alt="The Solution Desk Logo" width="140"/>
-
-<img src="https://raw.githubusercontent.com/Solution-Desk/.github/main/profile/assets/headline.svg" alt="Automation-first platform tagline" width="900" />
-
----
-
-**Automation-first platform for real people and small teams**  
-⚡ Automation-first · 🚀 Reduce wasted time · 📈 Scale what works  
-
-[![Website](https://img.shields.io/badge/🌐-Website-D400FF?style=for-the-badge)](https://thesolutiondesk.ca)
-[![Sponsor](https://img.shields.io/badge/❤️-Sponsor-ff579e?style=for-the-badge)](https://github.com/sponsors/SolutionsRMe)
-[![Contact](https://img.shields.io/badge/📧-Email-5eead4?style=for-the-badge)](mailto:contact@thesolutiondesk.ca)
-
-</div>
-
----
-
-## 🌍 Mission
-We create automation that **turns messy, manual work into streamlined systems**.  
-Our platform is built for teams that want **efficiency without complexity** — workflows that are smooth, scalable, and actually used.
-
----
-
-## 💡 Why The Solution Desk?
-- ⏱ **Save Hours Every Week** — automation-first tooling cuts out repetitive tasks  
-- 🧩 **Clarity Over Complexity** — easy to adopt, easy to share, easy to maintain  
-- 🎯 **Built for Conversion** — fewer clicks, faster delivery, measurable outcomes  
-
----
-
-## 🛠️ The Platform
-The Solution Desk is more than scripts or CLIs — it’s a **layer that unifies workflows**:
-- ✅ Works across different environments and toolchains  
-- 📊 Scales from individual contributors to small teams  
-- 📚 Documentation that doubles as onboarding  
-
----
-
-## 🚀 Featured Projects
-
-### 🗂 Productivity
+<!-- ───────────────────────────── -->
+<!-- Banner -->
 <p align="center">
-  <a href="https://github.com/SolutionsRMe/organiser-pro">
-    <img width="420" alt="organiser-pro" src="https://github-readme-stats.vercel.app/api/pin/?username=SolutionsRMe&repo=organiser-pro&theme=radical&hide_border=true&cache_seconds=7200" />
-  </a>
-  <a href="https://github.com/SolutionsRMe/auto-hired">
-    <img width="420" alt="auto-hired" src="https://github-readme-stats.vercel.app/api/pin/?username=SolutionsRMe&repo=auto-hired&theme=radical&hide_border=true&cache_seconds=7200" />
-  </a>
+  <img src="https://raw.githubusercontent.com/Solution-Desk/.github/main/profile/assets/banner.png" 
+       alt="The Solution Desk Banner" width="100%" />
 </p>
 
-### ⏱ Habits & Focus
+<!-- ───────────────────────────── -->
+
+
 <p align="center">
-  <a href="https://github.com/SolutionsRMe/habit-harbor">
-    <img width="420" alt="habit-harbor" src="https://github-readme-stats.vercel.app/api/pin/?username=SolutionsRMe&repo=habit-harbor&theme=radical&hide_border=true&cache_seconds=7200" />
-  </a>
-  <a href="https://github.com/SolutionsRMe/focus-timer">
-    <img width="420" alt="focus-timer" src="https://github-readme-stats.vercel.app/api/pin/?username=SolutionsRMe&repo=focus-timer&theme=radical&hide_border=true&cache_seconds=7200" />
-  </a>
+  Building intelligent systems that bring clarity, calm, and control back to your workflow.<br>
+  <strong>Currently under maintenance — rebuilding for scalability and simplicity.</strong>
 </p>
+
+<hr/>
+
+## About
+
+**The Solution Desk** is an automation-first ecosystem dedicated to turning complexity into clarity.  
+Every project is designed to reduce mental load, streamline systems, and empower individuals and small teams to focus on what truly matters.
+
+Right now, the platform is undergoing a structured redevelopment phase — tightening the foundation, re-engineering the UI, and aligning the product family under one cohesive experience.
 
 ---
 
-## 🤝 Get Involved
-💜 Every contribution helps us build tools that tame chaos for small teams.  
-Sponsors get early access and prioritized feature requests.
+## Featured Solution
 
-<p align="center">
-  <a href="https://thesolutiondesk.ca">
-    <img src="https://img.shields.io/badge/🌐-Website-D400FF?style=for-the-badge" alt="Website"/>
-  </a>
-  <a href="mailto:contact@thesolutiondesk.ca">
-    <img src="https://img.shields.io/badge/📧-Email-5eead4?style=for-the-badge" alt="Email"/>
-  </a>
-  <a href="https://github.com/SolutionsRMe">
-    <img src="https://img.shields.io/badge/👤-More%20Projects-111827?style=for-the-badge&logo=github&logoColor=white" alt="SolutionsRMe on GitHub"/>
-  </a>
-  <a href="https://github.com/sponsors/SolutionsRMe">
-    <img src="https://img.shields.io/badge/❤️-Sponsor%20The%20Solution%20Desk-e11d48?style=for-the-badge" alt="Sponsor The Solution Desk"/>
-  </a>
-</p>
+### **TaxSmart — The Canadian Tax-Smart Calculator**
+
+A transparent, user-centric approach to Canadian tax management.  
+TaxMate simplifies how Canadians calculate, plan, and optimize their taxes — one clear interface at a time.
+
+**Highlights of the rebuild:**
+- Automated, province-aware tax breakdowns  
+- Smart categorization and deduction grouping  
+- “Pay-What-You-Can” and Pro-tier options  
+- Live rate updates from government data  
+- Unified, cross-platform design for web and mobile  
+
+TaxSmart embodies The Solution Desk philosophy: fix the process, and the results fix themselves.
 
 ---
 
-<div align="center">
-  <sub>✨ Building tools that tame chaos — and turn it into results ✨</sub>
-  <br><br>
-  <img src="https://komarev.com/ghpvc/?username=Solution-Desk&style=flat-square&color=brightgreen" alt="Org profile views"/>
-</div>
+## Works in Progress
+
+Beyond TaxSmart, several solutions are actively being refined and prepared for release — each designed to automate and simplify everyday systems, including:
+
+- Workflow and process-mapping tools  
+- Productivity and focus trackers  
+- AI-assisted resume and hiring utilities  
+- Data dashboards for personal and team metrics  
+- Self-guided habit and reflection systems  
+
+Each project follows the same principle: **practical automation, measurable improvement, and human-first design.**
+
+---
+
+## Collaboration & Ideas
+
+Constructive feedback and fresh perspectives are always welcome.  
+Whether it’s a new feature concept, UI suggestion, or integration idea — innovation often starts as a single conversation.  
+
+If something here sparks an idea, reach out. Collaboration is always open-minded, structured, and results-oriented.
+
+---
+
+## Contact
+
+- **Website:** [thesolutiondesk.ca](https://thesolutiondesk.ca)  
+- **GitHub:** [Solution-Desk](https://github.com/Solution-Desk)  
+- **Email:** [info@thesolutiondesk.ca](mailto:info@thesolutiondesk.ca)
+
+---
+
+<p align="center">
+  <sub>© 2025 The Solution Desk and Company</sub><br>
+  <sub>Engineering clarity through automation, quality, and human design.</sub>
+</p>
