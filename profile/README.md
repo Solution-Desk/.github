@@ -5,6 +5,13 @@
        alt="The Solution Desk Banner" width="100%" />
 </p>
 
+<!-- Sponsor Badge -->
+<p align="center">
+  <a href="https://github.com/sponsors/SolutionsRMe">
+    <img src="https://img.shields.io/badge/Sponsor-💜_Support-blue?style=for-the-badge" alt="Sponsor The Solution Desk">
+  </a>
+</p>
+
 <!-- ───────────────────────────── -->
 
 
@@ -55,6 +62,15 @@ Beyond TaxSmart, several solutions are actively being refined and prepared for r
 - Self-guided habit and reflection systems  
 
 Each project follows the same principle: **practical automation, measurable improvement, and human-first design.**
+
+---
+
+## 💜 Support Our Work
+
+If you find value in our open-source projects and philosophy, consider supporting ongoing development through sponsorship.  
+Your contributions help fund better tools, documentation, and design across The Solution Desk ecosystem.  
+
+👉 [**Sponsor The Solution Desk**](https://github.com/sponsors/SolutionsRMe)
 
 ---
 
